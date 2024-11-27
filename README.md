@@ -74,13 +74,13 @@ The `main.py` script allows you to interactively select an algorithm and input g
 
 **Input:**
 
-    ```python
-    {
-        'A': [('B', 1), ('C', 4)],
-        'B': [('C', 2)],
-        'C': []
+    graph = {
+    'A': [('B', 1), ('C', 4)],
+    'B': [('A', 1), ('C', 2), ('D', 6)],
+    'C': [('A', 4), ('B', 2), ('D', 3)],
+    'D': [('B', 6), ('C', 3)]
     }
-    ```
+
 **Output:**
 
    ```plaintext
@@ -91,10 +91,12 @@ The `main.py` script allows you to interactively select an algorithm and input g
 ### **2.Bellman-Ford Algorithm**
 **Input**
    ```python
-   [
+   edges = [
     ('A', 'B', 1),
     ('B', 'C', 2),
-    ('A', 'C', 4)
+    ('A', 'C', 4),
+    ('C', 'D', 3),
+    ('B', 'D', 6)
    ]
    ```
 **Output:**
