@@ -6,7 +6,7 @@ def floyd_warshall(graph):
 
     for node in nodes:
         dist[node][node] = 0
-        for neighbor, weight in graph[node].items():
+        for neighbor, weight in graph[node]:
             dist[node][neighbor] = weight
 
     for k in nodes:
