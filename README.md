@@ -21,15 +21,25 @@ This project implements three popular shortest-path algorithms, packaged with an
 ## **File Structure**
 
 DAAHANDSON_14/
+
 │
+
 ├── dijkstra.py # Implementation of Dijkstra's algorithm
+
 ├── bellman_ford.py # Implementation of Bellman-Ford algorithm
+
 ├── floyd_warshall.py # Implementation of Floyd-Warshall algorithm
+
 ├── examples/ # Examples demonstrating algorithm usage
+
 │ ├── example_dijkstra.py
+
 │ ├── example_bellman_ford.py
+
 │ └── example_floyd_warshall.py
+
 ├── main.py # Interactive program to test algorithms
+
 └── README.md
 
 ---
@@ -60,15 +70,63 @@ The `main.py` script allows you to interactively select an algorithm and input g
 
 ## Example Outputs
 
-```markdown
-### 1.Dijkstra's Algorithm
+### **1.Dijkstra's Algorithm**
 
-**input:**
+**Input:**
 
-    ```python
-    {
-        'A': [('B', 1), ('C', 4)],
-        'B': [('C', 2)],
-        'C': []
+    graph = {
+    'A': [('B', 1), ('C', 4)],
+    'B': [('A', 1), ('C', 2), ('D', 6)],
+    'C': [('A', 4), ('B', 2), ('D', 3)],
+    'D': [('B', 6), ('C', 3)]
     }
 
+**Output:**
+
+   ```plaintext
+   Shortest distances from A: {'A': 0, 'B': 1, 'C': 3}
+   ```
+![Dijkstra](https://github.com/user-attachments/assets/c4b71744-d1a5-4ab6-84e0-44e4d4d33502)
+
+### **2.Bellman-Ford Algorithm**
+**Input**
+   ```python
+   edges = [
+    ('A', 'B', 1),
+    ('B', 'C', 2),
+    ('A', 'C', 4),
+    ('C', 'D', 3),
+    ('B', 'D', 6)
+   ]
+   ```
+**Output:**
+
+   ```plaintext
+   Shortest distances from A: {'A': 0, 'B': 1, 'C': 3}
+   ```
+![Bellman-Ford](https://github.com/user-attachments/assets/9f017b7d-4e12-465c-be4a-682e9a57fa2c)
+
+### **3.Floyd-Warshall Algorithm**
+**Input**
+   ```python
+   {
+    'A': {'B': 1, 'C': 4},
+    'B': {'C': 2},
+    'C': {}
+   }
+   ```
+**Output:**
+
+   ```vbnet
+   All-pairs shortest paths:
+   Distance from A to A: 0
+   Distance from A to B: 1
+   Distance from A to C: 3
+   Distance from B to A: inf
+   Distance from B to B: 0
+   Distance from B to C: 2
+   Distance from C to A: inf
+   Distance from C to B: inf
+   Distance from C to C: 0
+   ```
+![Floyd-Warshall](https://github.com/user-attachments/assets/8f0b94d5-7886-40f7-bb2b-aafa95cdb9da)
